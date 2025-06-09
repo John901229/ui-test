@@ -3,9 +3,19 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Segoe UI", "Noto Sans TC", sans-serif;
-  background-color: #f8f8f8;
-  color: #222;
+  height: 100vh;
+  min-height: 100vh;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  background: url('assets/bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+
+  font-family: 'Segoe UI', sans-serif;
+
+  /* 🔥 重點在這兩行： */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
