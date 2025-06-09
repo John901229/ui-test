@@ -1,87 +1,20 @@
 html, body {
-  height: 100%;
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  min-height: 100vh;
+  height: 100dvh; /* ✅ 為手機 Safari 修復置中問題 */
+  min-height: 100dvh;
   padding-top: env(safe-area-inset-top);
   padding-bottom: env(safe-area-inset-bottom);
   background: url('assets/bg.jpg') no-repeat center center fixed;
   background-size: cover;
-
   font-family: 'Segoe UI', sans-serif;
-
-  /* 🔥 重點在這兩行： */
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.container {
-  max-width: 500px;
-  margin: 40px auto;
-  padding: 20px;
-  border-radius: 16px;
-  background: white;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-h1 {
-  font-size: 28px;
-  margin-bottom: 32px;
-}
-
-button {
-  display: block;
-  width: 100%;
-  padding: 16px 0;
-  margin: 12px 0;
-  border: none;
-  border-radius: 12px;
-  background: linear-gradient(90deg, #8e2de2, #4a00e0);
-  color: white;
-  font-size: 18px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: transform 0.1s ease;
-}
-
-button:hover {
-  transform: scale(1.02);
-}
-
-#status {
-  margin-top: 20px;
-  font-size: 16px;
-  color: #666;
-}
-
-/* 查詢卡片 */
-.log-card {
-  background-color: #f9f9f9;
-  border-radius: 12px;
-  padding: 12px 16px;
-  margin: 12px 0;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06);
-  font-size: 15px;
-  text-align: left;
-  line-height: 1.4;
-}
-
-.log-card .line1 {
-  font-weight: 600;
-  margin-bottom: 4px;
-}
-
-.log-card .line2 {
-  font-size: 14px;
-  color: #555;
 }
 
 .glass-container {
@@ -96,7 +29,7 @@ button:hover {
 }
 
 .title {
-  font-size: 28px;
+  font-size: 32px;
   color: #000000;
   margin-bottom: 35px;
 }
