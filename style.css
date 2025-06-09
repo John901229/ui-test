@@ -1,55 +1,53 @@
-/* ✅ 全局基本設定 */
 html, body {
   margin: 0;
   padding: 0;
   height: auto;
   min-height: 100vh;
-  font-family: 'Segoe UI', sans-serif;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
   background: url('assets/bg.jpg') no-repeat center center fixed;
   background-size: cover;
+  font-family: 'Segoe UI', sans-serif;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
   padding-top: env(safe-area-inset-top);
   padding-bottom: env(safe-area-inset-bottom);
 }
 
-/* ✅ 查詢頁面用：內容不強制置中但有 padding */
-.container {
-  padding-top: 80px;
-  padding-bottom: 40px;
-  max-width: 700px;
-  margin: 0 auto;
+/* 🔸查詢頁面不置中，只套背景 */
+body.querypage {
+  display: block;
+  justify-content: initial;
+  align-items: initial;
 }
 
-/* ✅ 首頁專用：置中卡片 */
+/* 🔹首頁置中用 */
 body.homepage {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* ✅ 卡片容器（首頁與查詢都共用） */
+/* 🔹容器（首頁與查詢標題區） */
 .glass-container {
   background: rgba(255, 255, 255, 0.10);
   border-radius: 30px;
-  padding: 40px 20px;
+  padding: 40px;
   backdrop-filter: blur(25px) brightness(1.1);
   -webkit-backdrop-filter: blur(25px) brightness(1.1);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
   text-align: center;
   width: 320px;
-  margin: 0 auto;
+  margin: 40px auto 20px;
 }
 
-/* ✅ 標題樣式 */
-.title {
-  font-size: 32px;
+/* 🔹標題 */
+.title, h1 {
+  font-size: 28px;
   color: #000000;
   margin-bottom: 35px;
   text-align: center;
 }
 
-/* ✅ 按鈕樣式 */
+/* 🔹首頁按鈕 */
 .glass-button {
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(240, 240, 255, 0.1));
   border: 1px solid rgba(255, 255, 255, 0.5);
@@ -69,24 +67,23 @@ body.homepage {
     4px 4px 12px rgba(0, 0, 0, 0.1);
   transition: all 0.2s ease-in-out;
 }
-
 .glass-button:hover {
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.25), rgba(240, 240, 255, 0.15));
   transform: scale(1.02);
 }
-
 .glass-button:active {
   box-shadow:
     inset 2px 2px 4px rgba(0, 0, 0, 0.15),
     inset -2px -2px 4px rgba(255, 255, 255, 0.2);
 }
 
-/* ✅ 查詢頁的打卡紀錄卡片 */
+/* ✅ 查詢紀錄卡片（玻璃感） */
 .log-card {
   background: rgba(255, 255, 255, 0.10);
   border-radius: 20px;
   padding: 16px 20px;
-  margin: 16px 0;
+  margin: 16px auto;
+  max-width: 90%;
   backdrop-filter: blur(18px) brightness(1.05);
   -webkit-backdrop-filter: blur(18px) brightness(1.05);
   box-shadow:
@@ -98,18 +95,22 @@ body.homepage {
   line-height: 1.5;
 }
 
+/* 🔹紀錄第一行 */
 .log-card .line1 {
   font-weight: 600;
   font-size: 16px;
   margin-bottom: 6px;
 }
 
+/* 🔹紀錄第二行 */
 .log-card .line2 {
   font-size: 14px;
   color: #333;
 }
-body.querypage {
-  display: block;
-  align-items: initial;
-  justify-content: initial;
-}
+
+/* ✅ 查詢列表容器 */
+#record-list {
+  margin: 0 auto 40px;
+  width: 100%;
+  max-width: 600px;
+  padding: 0 16px;
