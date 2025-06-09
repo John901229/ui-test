@@ -99,3 +99,9 @@ body {
 body {
   overflow-y: auto;
 }
+html, body {
+  height: auto;
+  min-height: 100vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
