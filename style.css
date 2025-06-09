@@ -83,20 +83,6 @@ button:hover {
   font-size: 14px;
   color: #555;
 }
-body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  min-height: 100vh;
-  padding-top: env(safe-area-inset-top);
-  padding-bottom: env(safe-area-inset-bottom);
-  background: url('assets/bg.jpg') no-repeat center center fixed;
-  background-size: cover;
-  font-family: 'Segoe UI', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .glass-container {
   background: rgba(255, 255, 255, 0.10);
