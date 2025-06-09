@@ -1,39 +1,55 @@
+/* ✅ 全局基本設定 */
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
-}
-
-body {
-  min-height: 100dvh;
-  padding-top: env(safe-area-inset-top);
-  padding-bottom: env(safe-area-inset-bottom);
+  height: auto;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   background: url('assets/bg.jpg') no-repeat center center fixed;
   background-size: cover;
-  font-family: 'Segoe UI', sans-serif;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* ✅ 查詢頁面用：內容不強制置中但有 padding */
+.container {
+  padding-top: 80px;
+  padding-bottom: 40px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ✅ 首頁專用：置中卡片 */
+body.homepage {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* ✅ 卡片容器（首頁與查詢都共用） */
 .glass-container {
   background: rgba(255, 255, 255, 0.10);
   border-radius: 30px;
-  padding: 40px;
+  padding: 40px 20px;
   backdrop-filter: blur(25px) brightness(1.1);
   -webkit-backdrop-filter: blur(25px) brightness(1.1);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
   text-align: center;
   width: 320px;
+  margin: 0 auto;
 }
 
+/* ✅ 標題樣式 */
 .title {
   font-size: 32px;
   color: #000000;
   margin-bottom: 35px;
-    text-align: center; /* ✅ 新增這行 */
+  text-align: center;
 }
 
+/* ✅ 按鈕樣式 */
 .glass-button {
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(240, 240, 255, 0.1));
   border: 1px solid rgba(255, 255, 255, 0.5);
@@ -64,7 +80,8 @@ body {
     inset 2px 2px 4px rgba(0, 0, 0, 0.15),
     inset -2px -2px 4px rgba(255, 255, 255, 0.2);
 }
-/* 查詢卡片：玻璃風格 */
+
+/* ✅ 查詢頁的打卡紀錄卡片 */
 .log-card {
   background: rgba(255, 255, 255, 0.10);
   border-radius: 20px;
@@ -81,7 +98,6 @@ body {
   line-height: 1.5;
 }
 
-/* 卡片內容結構 */
 .log-card .line1 {
   font-weight: 600;
   font-size: 16px;
@@ -91,17 +107,4 @@ body {
 .log-card .line2 {
   font-size: 14px;
   color: #333;
-}
-.container {
-  padding-top: 80px;
-  padding-bottom: 40px;
-}
-body {
-  overflow-y: auto;
-}
-html, body {
-  height: auto;
-  min-height: 100vh;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
 }
