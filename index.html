@@ -3,17 +3,22 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>打卡系統</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="glass-container">
-    <h1 class="title">打卡系統</h1>
-    <button class="glass-button" onclick="handleClick('clockin')">上班打卡</button>
-    <button class="glass-button" onclick="handleClick('clockout')">下班打卡</button>
-    <button class="glass-button" onclick="location.href='query.html'">查詢打卡紀錄</button>
+  <div class="container">
+    <h1>打卡系統</h1>
+    <button onclick="handlePunch('clockin')">上班打卡</button>
+    <button onclick="handlePunch('clockout')">下班打卡</button>
+    <button onclick="window.location.href='query.html'">查詢打卡紀錄</button>
+    <p id="status"></p>
   </div>
-  <script src="app.js"></script>
+
+  <script type="module">
+    import { handlePunch } from './app.js';
+    window.handlePunch = handlePunch;
+  </script>
 </body>
 </html>
