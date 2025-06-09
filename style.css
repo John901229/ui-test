@@ -108,3 +108,8 @@ body.homepage {
   font-size: 14px;
   color: #333;
 }
+body.querypage {
+  display: block;
+  align-items: initial;
+  justify-content: initial;
+}
