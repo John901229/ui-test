@@ -32,6 +32,7 @@ body {
   font-size: 32px;
   color: #000000;
   margin-bottom: 35px;
+    text-align: center; /* ✅ 新增這行 */
 }
 
 .glass-button {
