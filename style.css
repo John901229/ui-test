@@ -1,34 +1,38 @@
+/* ✅ 預設設定 */
 html, body {
   margin: 0;
   padding: 0;
   height: auto;
-  min-height: 100vh;
+  min-height: 100vh; /* 支援完整螢幕 */
+  overflow-y: auto;  /* 能夠捲動畫面 */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ✅ 共用背景設定（打卡頁 / 查詢頁）*/
+body {
+  padding-top: env(safe-area-inset-top); /* 頂部安全區域 */
+  padding-bottom: env(safe-area-inset-bottom); /* 底部安全區域 */
   background: url('assets/bg.jpg') no-repeat center center fixed;
   background-size: cover;
   font-family: 'Segoe UI', sans-serif;
-  -webkit-overflow-scrolling: touch;
-  overflow-y: auto;
-  padding-top: env(safe-area-inset-top);
-  padding-bottom: env(safe-area-inset-bottom);
 }
 
-/* 🔸查詢頁面不置中，只套背景 */
-body.querypage {
-  display: block;
-  justify-content: initial;
-  align-items: initial;
-}
-
-/* 🔹首頁置中用 */
+/* ✅ 首頁用 container（打卡按鈕那頁）置中對齊 */
 body.homepage {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;  /* 固定高度置中 */
 }
 
-/* 🔹容器（首頁與查詢標題區） */
+/* ✅ 查詢頁用 container（讓紀錄可上下捲動）*/
+body.querypage {
+  display: block;
+}
+
+/* ✅ 卡片包裝容器 */
 .glass-container {
-  background: rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.10);  /* 玻璃感底色 */
   border-radius: 30px;
   padding: 40px;
   backdrop-filter: blur(25px) brightness(1.1);
@@ -36,21 +40,21 @@ body.homepage {
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
   text-align: center;
   width: 320px;
-  margin: 40px auto 20px;
+  margin: 0 auto;
 }
 
-/* 🔹標題 */
-.title, h1 {
-  font-size: 28px;
+/* ✅ 標題樣式 */
+.title {
+  font-size: 32px;
   color: #000000;
   margin-bottom: 35px;
   text-align: center;
 }
 
-/* 🔹首頁按鈕 */
+/* ✅ 按鈕樣式 */
 .glass-button {
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(240, 240, 255, 0.1));
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: linear-gradient(145deg, rgba(255,255,255,0.2), rgba(240,240,255,0.1));
+  border: 1px solid rgba(255,255,255,0.5);
   border-radius: 999px;
   padding: 18px 32px;
   margin: 12px 0;
@@ -62,28 +66,29 @@ body.homepage {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow:
-    inset 1px 1px 2px rgba(255, 255, 255, 0.6),
-    inset -1px -1px 2px rgba(255, 255, 255, 0.2),
-    4px 4px 12px rgba(0, 0, 0, 0.1);
+    inset 1px 1px 2px rgba(255,255,255,0.6),
+    inset -1px -1px 2px rgba(255,255,255,0.2),
+    4px 4px 12px rgba(0,0,0,0.1);
   transition: all 0.2s ease-in-out;
 }
+
 .glass-button:hover {
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.25), rgba(240, 240, 255, 0.15));
+  background: linear-gradient(145deg, rgba(255,255,255,0.25), rgba(240,240,255,0.15));
   transform: scale(1.02);
 }
+
 .glass-button:active {
   box-shadow:
-    inset 2px 2px 4px rgba(0, 0, 0, 0.15),
-    inset -2px -2px 4px rgba(255, 255, 255, 0.2);
+    inset 2px 2px 4px rgba(0,0,0,0.15),
+    inset -2px -2px 4px rgba(255,255,255,0.2);
 }
 
-/* ✅ 查詢紀錄卡片（玻璃感） */
+/* ✅ 查詢卡片：玻璃樣式 */
 .log-card {
   background: rgba(255, 255, 255, 0.10);
   border-radius: 20px;
   padding: 16px 20px;
-  margin: 16px auto;
-  max-width: 90%;
+  margin: 16px 20px;
   backdrop-filter: blur(18px) brightness(1.05);
   -webkit-backdrop-filter: blur(18px) brightness(1.05);
   box-shadow:
@@ -95,23 +100,14 @@ body.homepage {
   line-height: 1.5;
 }
 
-/* 🔹紀錄第一行 */
+/* ✅ 卡片內文字：上下兩行 */
 .log-card .line1 {
   font-weight: 600;
   font-size: 16px;
   margin-bottom: 6px;
 }
 
-/* 🔹紀錄第二行 */
 .log-card .line2 {
   font-size: 14px;
   color: #333;
-}
-
-/* ✅ 查詢列表容器 */
-#record-list {
-  margin: 0 auto 40px;
-  width: 100%;
-  max-width: 600px;
-  padding: 0 16px;
 }
