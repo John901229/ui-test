@@ -112,3 +112,20 @@ body.querypage {
   color: #444;
   text-align: center;
 }
+/* ✅ 僅查詢頁需要這些設定，避免資料顯示被壓縮 */
+body.querypage {
+  display: block;
+  padding: 0 16px;
+  height: auto;
+  min-height: 100vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ✅ 查詢頁專用的 container（可讓卡片展開） */
+.glass-container.query-page {
+  max-width: 700px;
+  margin: 60px auto 40px auto;
+  padding: 32px;
+  width: auto;
+}
