@@ -1,34 +1,30 @@
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
+  height: auto;
   min-height: 100vh;
   background: url('assets/bg.jpg') no-repeat center center fixed;
   background-size: cover;
   font-family: 'Segoe UI', sans-serif;
-  -webkit-overflow-scrolling: touch;
   overflow-y: auto;
-  padding-top: env(safe-area-inset-top);
-  padding-bottom: env(safe-area-inset-bottom);
+  -webkit-overflow-scrolling: touch;
 }
 
-/* 🔸查詢頁面不置中，只套背景 */
-body.querypage {
-  display: block;
-  justify-content: initial;
-  align-items: initial;
-}
-
-/* 🔹首頁置中用 */
 body.homepage {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: max(20px, env(safe-area-inset-top)) 20px;  /* 兼容安全區域 + 基礎邊距 */
-  box-sizing: border-box;  /* 確保 padding 不影響總高度 */
+  height: 100vh;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
-/* 🔹容器（首頁與查詢標題區） */
+body.querypage {
+  display: block;
+  padding: 40px 20px;
+}
+
+/* 📦 容器 */
 .glass-container {
   background: rgba(255, 255, 255, 0.10);
   border-radius: 30px;
@@ -38,18 +34,18 @@ body.homepage {
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
   text-align: center;
   width: 320px;
-  margin: 40px auto 20px;
+  margin: 0 auto;
 }
 
-/* 🔹標題 */
-.title, h1 {
-  font-size: 28px;
-  color: #000000;
+/* 📌 首頁標題 */
+.title {
+  font-size: 32px;
+  color: #000;
   margin-bottom: 35px;
   text-align: center;
 }
 
-/* 🔹首頁按鈕 */
+/* ✅ 按鈕設計 */
 .glass-button {
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(240, 240, 255, 0.1));
   border: 1px solid rgba(255, 255, 255, 0.5);
@@ -69,10 +65,12 @@ body.homepage {
     4px 4px 12px rgba(0, 0, 0, 0.1);
   transition: all 0.2s ease-in-out;
 }
+
 .glass-button:hover {
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.25), rgba(240, 240, 255, 0.15));
   transform: scale(1.02);
 }
+
 .glass-button:active {
   box-shadow:
     inset 2px 2px 4px rgba(0, 0, 0, 0.15),
@@ -84,8 +82,7 @@ body.homepage {
   background: rgba(255, 255, 255, 0.10);
   border-radius: 20px;
   padding: 16px 20px;
-  margin: 16px auto;
-  max-width: 90%;
+  margin: 16px 0;
   backdrop-filter: blur(18px) brightness(1.05);
   -webkit-backdrop-filter: blur(18px) brightness(1.05);
   box-shadow:
@@ -97,23 +94,21 @@ body.homepage {
   line-height: 1.5;
 }
 
-/* 🔹紀錄第一行 */
 .log-card .line1 {
   font-weight: 600;
   font-size: 16px;
   margin-bottom: 6px;
 }
 
-/* 🔹紀錄第二行 */
 .log-card .line2 {
   font-size: 14px;
   color: #333;
 }
 
-/* ✅ 查詢列表容器 */
-#record-list {
-  margin: 0 auto 40px;
-  width: 100%;
-  max-width: 600px;
-  padding: 0 16px;
+/* ✅ 預設提示 */
+#status {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #444;
+  text-align: center;
 }
